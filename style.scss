@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.5vw;
+  background: #e0e0e0;
+  font-family: "Baloo 2", cursive;
+}
+
+.container {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 1rem;
+  .card {
+    border-radius: 14px;
+    background: #e0e0e0;
+    box-shadow: 10px 10px 20px #bcbcbc, -10px -10px 20px #ffffff;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+
+    .card-header,
+    .card-header * {
+      font-size: 4vw;
+      font-weight: bolder;
+      font-family: "Lobster", cursive;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 0.1em;
+
+      label {
+        color: #333;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid #333;
+        padding: 0.4rem 0.7rem;
+        border-radius: 5px;
+      }
+      input:focus {
+        border-style: dashed;
+        outline: none;
+      }
+    }
+    //
+    .submit-btn {
+      color: blueviolet;
+      width: 100%;
+      height: 3em;
+      border-radius: 30em;
+      font-size: large;
+      font-weight: bolder;
+      font-family: inherit;
+      border: none;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      background: #e0e0e0;
+      box-shadow: 5px 5px 17px #b5b5b5, -5px -5px 17px #ffffff;
+      margin-top: 10px;
+    }
+
+    .submit-btn::before {
+      content: "";
+      width: 0;
+      height: 3em;
+      border-radius: 30em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+      transition: 0.5s ease;
+      display: block;
+      z-index: -1;
+    }
+
+    .submit-btn:hover::before {
+      width: 100%;
+    }
+    //
+  }
+}
+table {
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0 3px 4px 0 rgba($color: #000000, $alpha: 0.4);
+  overflow: auto;
+  animation: slide-down 0.2s ease-out;
+  td,
+  th {
+    padding: 0.2rem 1rem;
+  }
+  th {
+    background-color: royalblue;
+    color: white;
+  }
+  td {
+    width: max-content;
+  }
+}
+.mid-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  .sl-btn {
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(255, 110, 110);
+    color: white;
+    padding: 0.2rem 4rem;
+    box-shadow: 0 2px 3px 0 rgba($color: #000000, $alpha: 0.2);
+  }
+  .sl-btn:hover {
+    background-color: rgb(255, 70, 70);
+  }
+}
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100%;
+}
+select {
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #333;
+  padding: 0.4rem 0.7rem;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0.5rem;
+  width: max-content;
+  background-color: #dbdbdb;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 5px 0 rgba($color: #000000, $alpha: 0.2);
+  border-radius: 10px;
+  * {
+    background-color: #dbdbdb;
+  }
+  z-index: 4;
+}
+.dropdown:first-of-type .dropdown-content {
+  top: calc(100% + 10px);
+  left: 0.5rem;
+}
+.dropdown:nth-of-type(2) .dropdown-content {
+  top: calc(100% + 10px);
+  right: 0px;
+}
+
+.dropdown .dropdown-content::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 2rem;
+  border-bottom: 10px solid blueviolet;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.dropdown:first-of-type .dropdown-content::before {
+  right: 80%;
+}
+.dropdown:nth-of-type(2) .dropdown-content::before {
+  right: 50%;
+}
+.dropdown-content .close-btn {
+  font-size: x-large;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: max-content;
+}
+.dropdown .dropdown-content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 5px 0;
+  background-color: blueviolet;
+  border-radius: 10px 10px 0 0;
+}
+.dropdown.active .dropdown-content {
+  display: block;
+}
+.dropdown.active .dropdown-btn {
+  background-color: rgb(31, 185, 57);
+  color: white;
+}
+.active {
+  display: flex;
+}
+.user {
+  font-family: "Lobster", cursive;
+  font-size: xx-large;
+}
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.display {
+  display: block;
+}
+.download-btn {
+  margin: 1rem;
+  padding: 0.2rem 0.3rem;
+  border: none;
+  background-color: rgb(7, 141, 7);
+  color: white;
+  border-radius: 0.25rem;
+}
+.dropdown-content {
+  animation: slide-down 0.2s ease-out;
+  transition: all 0.2s ease-in;
+}
+#msg-area {
+  color: red;
+}
+.btn {
+  border: none;
+  display: block;
+  width: 100%;
+  background-color: rgb(11, 161, 11);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+.danger {
+  background-color: rgb(196, 48, 48);
+}
+@keyframes slide-down {
+  from {
+    margin-top: -20px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
+
+// CSS MODAL
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 0.5rem;
+  background-color: #313236;
+  color: white;
+}
+
+.modal-body {
+  padding: 2rem 1rem;
+}
+
+.modal-footer {
+  background-color: #5cb85c;
+  color: white;
+}
+//
+
+@keyframes slide-left {
+  from {
+    margin-right: 20px;
+  }
+  to {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  * {
+    font-size: 5vw;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 0;
+    .card {
+      width: 95%;
+      padding: 2rem;
+      .card-header,
+      .card-header * {
+        font-size: 10vw;
+      }
+    }
+  }
+  .dropdown:nth-of-type(2) .dropdown-content {
+    top: calc(100% + 10px);
+    right: -50%;
+  }
+}
